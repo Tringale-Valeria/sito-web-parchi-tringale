@@ -96,10 +96,12 @@ nav a:hover {
     font-weight: 500;
 }
 
+/* Card dei parchi */
 .park-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .park-card {
@@ -108,28 +110,76 @@ nav a:hover {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    margin-bottom: 30px; /* Aggiunta spaziatura inferiore */
 }
 
+/* Rendere l'intera card un link */
+.park-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Immagine della card */
+.park-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+/* Testo all'interno della card */
+.park-card h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    padding: 1rem;
+}
+
+.park-card p {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Hover per migliorare l'effetto link */
 .park-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-.park-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+/* Responsive */
+@media (max-width: 768px) {
+    .park-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .park-card {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px; /* Adattamento per mobile */
+    }
+
+    .park-card img {
+        height: 55%;
+    }
+
+    .park-card h3 {
+        font-size: 1rem;
+    }
+
+    .park-card p {
+        font-size: 0.9rem;
+    }
 }
 
-.park-card h3 {
-    font-size: 1.2rem;
-    color: #2e7d32;
-    padding: 1rem 1rem 0 1rem;
-}
-
-.park-card p {
-    padding: 0.5rem 1rem 1rem 1rem;
-}
 
 /* Button Style */
 .button {
@@ -535,5 +585,4 @@ footer nav a:hover {
         gap: 1rem;
     }
 }
-
 
